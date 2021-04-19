@@ -12,11 +12,11 @@ from sklearn.externals import joblib
 from detect import extract_face"""
 
 def fetch_roll(img, model_sk, emb):
-  out_encoder = joblib.load('model\\encoder_model.pkl')
+  out_encoder = joblib.load('/content/Face_Attendance_Colab/recognition/model/encoder_model.pkl')
   samples = expand_dims(emb, axis=0)
   yhat_class = model_sk.predict(samples)
   predict_names = out_encoder.inverse_transform(yhat_class)
-  print('Predicted: ', predict_names[0])
+  return predict_names[0]
 
 def recognise(image, model):
   data = load('files\\8th_sem_data.npz')

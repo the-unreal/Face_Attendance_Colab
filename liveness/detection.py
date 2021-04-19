@@ -3,7 +3,7 @@ from keras.models import load_model
 import numpy as np
 import cv2
 
-def predictperson(frame, model):
+def predictperson(frame, model, faceCascade):
   gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         
   faces = faceCascade.detectMultiScale(gray,scaleFactor=1.1,minNeighbors=5,minSize=(30, 30))

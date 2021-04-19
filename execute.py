@@ -31,6 +31,6 @@ if __name__ == "__main__":
   args = vars(parser.parse_args())
   spoof_result = spoof(args["file_path"], model_spoof)
   if spoof_result == 'real':
-    print(recog(img, model_recog))
+    print("Attendance updated for: ", recog(img, model_recog))
   else:
-    print(spoof_result)
+    print(spoof_result, "image detected !!")
